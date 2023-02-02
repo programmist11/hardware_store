@@ -3,6 +3,8 @@ from django.db import models
 
 class Category(models.Model):
     title = models.CharField(max_length=200, verbose_name='Наименование')
+    descriptions = models.TextField(verbose_name='Описание')
+    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name="Фото",)
 
     def __str__(self):
         return self.title
