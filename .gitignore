@@ -1,0 +1,11 @@
+db.sqlite3
+media
+mysite/__pycache__/__init__.cpython-311.pyc
+mysite/__pycache__/settings.cpython-311.pyc
+mysite/__pycache__/urls.cpython-311.pyc
+mysite/__pycache__/wsgi.cpython-311.pyc
+shop/__pycache__/__init__.cpython-311.pyc
+shop/__pycache__/admin.cpython-311.pyc
+mysite/__pycache__/
+shop/__pycache__/
+shop/migrations/__pycache__/
