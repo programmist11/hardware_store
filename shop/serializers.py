@@ -8,7 +8,7 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
 
 
-class CartSerializer(serializers.HyperlinkedModelSerializer):
+class CartSerializer(serializers.ModelSerializer):
     category = serializers.SlugRelatedField(slug_field='title', read_only=True)
 
     class Meta:
@@ -16,3 +16,6 @@ class CartSerializer(serializers.HyperlinkedModelSerializer):
         model = Cart
 
 
+class PhoneSerializer(serializers.Serializer):
+    phone = serializers.CharField()
+    name = serializers.CharField()
