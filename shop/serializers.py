@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from .models import Cart, Category
 
 
@@ -8,7 +9,7 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
 
 
-class CartSerializer(serializers.ModelSerializer):
+class CartSerializer(serializers.HyperlinkedModelSerializer):
     category = serializers.SlugRelatedField(slug_field='title', read_only=True)
 
     class Meta:
