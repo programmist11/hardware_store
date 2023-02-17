@@ -12,7 +12,7 @@ SECRET_KEY = 'django-insecure-@ta+l0vna7n6u37v!$(2r6_thhec__fs=n4#_h4uk8so)c7epp
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 INSTALLED_APPS = [
@@ -69,11 +69,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangoproject',
+        'USER': 'djangouser',
+        'PASSWORD': 'x0h0kZmiuxd',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -100,7 +103,8 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
