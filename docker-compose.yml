@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  hs_db:
+    image: postgres:10.1-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  hs_web:
+    build: .
+    command: python /usr/src/hardware_store_rest/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/hardware_store_rest
+    ports:
+      - 8000:8000
+    depends_on:
+      - hs_db
+volumes:
+  postgres_data:
