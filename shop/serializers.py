@@ -13,7 +13,8 @@ class CartSerializer(serializers.HyperlinkedModelSerializer):
     category = serializers.SlugRelatedField(slug_field='title', read_only=True)
 
     class Meta:
-        fields = "__all__"
+        # fields = "__all__"
+        fields = ('id', 'title', 'descriptions', 'category', 'photo', 'price')
         model = Cart
 
 
